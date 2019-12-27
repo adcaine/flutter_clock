@@ -1,4 +1,4 @@
-`# Dot Matrix Clock
+# Dot Matrix Clock
 
 Flutter Clock Challenge Submission
 
