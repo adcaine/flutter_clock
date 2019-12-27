@@ -30,13 +30,27 @@ The Dot Matrix Clock utilizes the `Clock Model` as recommended by the contest ru
 The Dot Matrix Clock uses all properties of the `Clock Model`:
 
 * Weather condition
-* Current temperature
-* Low temperature
-* High temperature
+* Current, low, and high temperatures
 * Celsius and Fahrenheit display
 * Location
 * Light theme and dark theme
 * 12-hour and 24-hour clock display
+
+## Dot Matrix Clock Features
+
+### Animation
+
+Individual LEDs appear to flip when switching between the on and off states.  Flutter's `Transform` widget is used.
+
+To see the animation, it may be necessary to slow the animation down.
+
+### Streams
+
+The clock's displays uses streams and Flutter's `StreamBuilder` class to update the display.
+
+### Extension Methods
+
+The clock leverages Flutter's new extension methods. The extension methods on `ClockModel` simplify coding.
 
 
 
