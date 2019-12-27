@@ -10,7 +10,7 @@ From the `dot_matrix_clock` directory, run the command
 flutter run
 ```
 
-![Dot Matrix Clock](clock.png)
+![Dot Matrix Clock](dot_matrix_clock/clock.png)
 
 
 The Dot Matrix Clock supports landscape only.
@@ -23,7 +23,7 @@ To configure the Dot Matrix Clock:
 2.  Tap on the gear appearing in the extreme upper right.
 3.  From the menu, change the settings.
 
-![Customization](customization.png)
+![Customization](dot_matrix_clock/customization.png)
 
 The Dot Matrix Clock utilizes the `Clock Model` as recommended by the contest rules.
 
