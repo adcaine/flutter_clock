@@ -2,16 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_clock_helper/model.dart';
+import 'package:dot_matrix_clock/extensions/clockModel_extension.dart';
 import 'package:dot_matrix_clock/streams/date_time_stream.dart';
 import 'package:dot_matrix_clock/streams/ring_stream.dart';
 import 'package:dot_matrix_clock/widgets/DisplayArray.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_clock_helper/model.dart';
 
-import 'package:dot_matrix_clock/extensions/clockModel_extension.dart';
 import 'font/glyphs.dart';
-
 import 'themedata/theme_data.dart';
 
 class DotMatrixClock extends StatefulWidget {

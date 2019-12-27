@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:dot_matrix_clock/extensions/clockModel_extension.dart';
+import 'package:dot_matrix_clock/extensions/string_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:intl/intl.dart';
-import 'package:dot_matrix_clock/extensions/clockModel_extension.dart';
-import 'package:dot_matrix_clock/extensions/string_extension.dart';
 
 ///
 /// A container class for a List<List<bool>>.

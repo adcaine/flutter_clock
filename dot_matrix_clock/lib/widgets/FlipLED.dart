@@ -79,9 +79,7 @@ class _FlipLEDState extends State<FlipLED> with SingleTickerProviderStateMixin {
       begin: 0,
       end: pi,
     ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.slowMiddle)
-    );
+        parent: _animationController, curve: Curves.slowMiddle));
     _animation.addListener(_setAngle);
   }
 

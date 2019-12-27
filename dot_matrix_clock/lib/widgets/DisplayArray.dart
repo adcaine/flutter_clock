@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
 import 'package:dot_matrix_clock/font/glyphs.dart';
 import 'package:dot_matrix_clock/themedata/default_gradient.dart';
 import 'package:dot_matrix_clock/widgets/LEDMatrix.dart';
+import 'package:flutter/material.dart';
 
 ///
 /// This class models a row of LED matrices.  See [LEDMatrix].
