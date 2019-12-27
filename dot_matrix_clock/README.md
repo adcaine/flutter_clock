@@ -9,6 +9,10 @@ From the `dot_matrix_clock` directory, run the command
 ```
 flutter run
 ```
+
+![Dot Matrix Clock](clock.png)
+
+
 The Dot Matrix Clock supports landscape only.
 
 ## How to Configure the Dot Matrix Clock
