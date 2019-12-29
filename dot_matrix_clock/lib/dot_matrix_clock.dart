@@ -49,11 +49,11 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
     return AnimatedContainer(
         color: colors[CustomThemeElement.background],
         duration: Duration(milliseconds: 300),
-        child: StreamBuilder(
+        child: StreamBuilder<DateTime>(
           stream: _dateTimeStream.stream,
           initialData: DateTime.now(),
           builder: (context, snapshot) {
-            DateTime dateTime = snapshot.data as DateTime;
+            DateTime dateTime = snapshot.data;
             var glyphs = Glyphs.fromString(
                 widget.clockModel.getTimeString(dateTime: dateTime));
             return Column(
@@ -66,11 +66,11 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
                   diameter: 12.0,
                   padding: EdgeInsets.only(right: 2),
                 ),
-                StreamBuilder(
+                StreamBuilder<int>(
                   stream: _ringStream.stream,
                   initialData: 0,
                   builder: (context, snapshot) {
-                    int index = snapshot.data as int;
+                    int index = snapshot.data;
                     return DisplayArray(
                       displayGlyphs: Glyphs.parseByIndex(
                           index: index,
