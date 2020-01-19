@@ -21,7 +21,7 @@ class DotMatrixClock extends StatefulWidget {
 }
 
 class _DotMatrixClockState extends State<DotMatrixClock> {
-  Stream<int> _ringString =
+  Stream<int> _ringStream =
       Stream<int>.periodic(Duration(seconds: 10), (tick) => tick % 5);
 
   @override
@@ -63,7 +63,7 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
                   padding: EdgeInsets.only(right: 2),
                 ),
                 StreamBuilder<int>(
-                  stream: _ringString,
+                  stream: _ringStream,
                   initialData: 0,
                   builder: (context, snapshot) {
                     int index = snapshot.data;
