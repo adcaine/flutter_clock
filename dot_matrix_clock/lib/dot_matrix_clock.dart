@@ -3,8 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:dot_matrix_clock/extensions/clockModel_extension.dart';
-import 'package:dot_matrix_clock/streams/date_time_stream.dart';
-import 'package:dot_matrix_clock/streams/ring_stream.dart';
 import 'package:dot_matrix_clock/widgets/DisplayArray.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,14 +21,12 @@ class DotMatrixClock extends StatefulWidget {
 }
 
 class _DotMatrixClockState extends State<DotMatrixClock> {
-  DateTimeStream _dateTimeStream;
-  RingStream _ringStream;
+  Stream<int> _ringString =
+      Stream<int>.periodic(Duration(seconds: 10), (tick) => tick % 5);
 
   @override
   void initState() {
     super.initState();
-    _dateTimeStream = DateTimeStream();
-    _ringStream = RingStream();
     widget.clockModel.addListener(_updateModel);
     _updateModel();
   }
@@ -50,7 +46,7 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
         color: colors[CustomThemeElement.background],
         duration: Duration(milliseconds: 300),
         child: StreamBuilder<DateTime>(
-          stream: _dateTimeStream.stream,
+          stream: Stream.periodic(Duration(seconds: 1), (_) => DateTime.now()),
           initialData: DateTime.now(),
           builder: (context, snapshot) {
             DateTime dateTime = snapshot.data;
@@ -67,7 +63,7 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
                   padding: EdgeInsets.only(right: 2),
                 ),
                 StreamBuilder<int>(
-                  stream: _ringStream.stream,
+                  stream: _ringString,
                   initialData: 0,
                   builder: (context, snapshot) {
                     int index = snapshot.data;
@@ -101,8 +97,6 @@ class _DotMatrixClockState extends State<DotMatrixClock> {
   void dispose() {
     widget.clockModel.removeListener(_updateModel);
     widget.clockModel.dispose();
-    _dateTimeStream.dispose();
-    _ringStream.dispose();
     super.dispose();
   }
 
